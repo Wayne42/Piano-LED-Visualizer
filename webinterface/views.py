@@ -60,6 +60,10 @@ def ports():
 def network():
     return render_template('network.html')
 
+@webinterface.route('/webpiano')
+def webpiano():
+    return render_template('webpiano.html')
+
 
 @webinterface.route('/upload', methods=['POST'])
 def upload_file():

@@ -854,6 +854,11 @@ function get_ports() {
             document.getElementById('connect_all_textarea').innerHTML = connected_ports;
             if (response["midi_logging"] === "1") {
                 document.getElementById("midi_events_checkbox").checked = true;
+                try{
+                    document.getElementById("midi_events_checkbox2").checked = true;
+                }catch(e){
+                    
+                }
             }
             refresh_ports_button.classList.remove("animate-spin", "pointer-events-none");
         }
