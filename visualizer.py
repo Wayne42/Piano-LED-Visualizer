@@ -223,12 +223,12 @@ while True:
             backlight_cleared = False
 
     # Show menulcd
-    if display_cycle >= 3:
-        display_cycle = 0
+    # if display_cycle >= 3:
+    #    display_cycle = 0
 
-        if elapsed_time > screen_hold_time:
-            menu.show()
-    display_cycle += 1
+    #    if elapsed_time > screen_hold_time:
+    #        menu.show()
+    #display_cycle += 1
 
     # Create ColorMode if first-run or changed
     if ledsettings.color_mode != color_mode_name or ledsettings.incoming_setting_change:
