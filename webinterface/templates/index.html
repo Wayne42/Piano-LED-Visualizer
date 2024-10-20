@@ -340,7 +340,7 @@
                 // document.querySelector('button').classList.add('active')
             })
                 */
-            document.querySelector('#loading').remove()
+            
             /*
             const keyboard = new Tone.MidiInput()
             keyboard.on('keyDown', (e, v) => piano.keyDown(e, undefined, v))
@@ -349,8 +349,18 @@
             keyboard.on('pedalUp', () => piano.pedalUp())
             */
     
-            const container = document.getElementById('WEBPIANO');
-            const keyboard3 = new PianoKeys.Keyboard(container);
+            var container; 
+            var keyboard3;
+            document.querySelector('#loading').remove()
+            window.addEventListener("load", (event) => {
+                console.log("page is fully loaded");
+                setTimeout(()=>{
+                     container = document.getElementById('WEBPIANO');
+                     keyboard3 = new PianoKeys.Keyboard(container);
+                    document.querySelector('#loading').remove()
+                }, 500);
+            });
+
     
             document.querySelectorAll(".keyboardbtn").forEach(btn => {
                 btn.addEventListener('mousedown', () => {
