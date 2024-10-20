@@ -208,7 +208,7 @@ while True:
         elapsed_time = 0
 
     # IDLE animation
-    manage_idle_animation(ledstrip, ledsettings, menu, midiports)
+    # manage_idle_animation(ledstrip, ledsettings, menu, midiports)
 
     # Check for activity
     if (time.time() - midiports.last_activity) > 120:
@@ -250,10 +250,10 @@ while True:
             menu.show()
             ledsettings.add_instance(menu, ledstrip)
 
-    platform.manage_hotspot(hotspot, usersettings, midiports)
+    # platform.manage_hotspot(hotspot, usersettings, midiports)
 
     # Process GPIO keys
-
+    '''
     if GPIO.input(KEYUP) == 0:
         midiports.last_activity = time.time()
         menu.change_pointer(0)
@@ -303,7 +303,7 @@ while True:
         menu.speed_change()
         while GPIO.input(JPRESS) == 0:
             time.sleep(0.01)
-
+    '''
     # Fade processing
     for n, strength in enumerate(ledstrip.keylist):
 
