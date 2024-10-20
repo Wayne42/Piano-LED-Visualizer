@@ -20,7 +20,7 @@ def start_server(loop):
     async def learning(websocket):
         try:
             while True:
-                await asyncio.sleep(0.001)
+                await asyncio.sleep(0.0001)
                 for msg in webinterface.learning.socket_send[:]:
                     await websocket.send(str(msg))
                     webinterface.learning.socket_send.remove(msg)

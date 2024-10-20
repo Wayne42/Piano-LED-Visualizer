@@ -375,7 +375,7 @@ while True:
         if int(usersettings.get_setting_value("midi_logging")) == 1:
             if not msg.is_meta and not "clock" in str(msg):
                 try:
-                    learning.socket_send.append("" + str(msg))
+                    learning.socket_send.append(str(msg))
                 except Exception as e:
                     logger.warning(f"Unexpected exception occurred: {e}")
 
